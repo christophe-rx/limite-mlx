@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Sanity-check a checkpoint: next-token loss and top-1 on held-out prose.
 
-    python eval.py --model model-base     # expect ~3.2 nats / ~41%
-    python eval.py --model model          # Violetto is a maths model; prose is worse
+    python eval.py --model models/limite-1b-base   # expect ~3.2 nats / ~41%
+    python eval.py                                 # Violetto: a maths model, prose is worse
 """
 import argparse
 import math
@@ -22,7 +22,7 @@ TEXT = (
 )
 
 ap = argparse.ArgumentParser()
-ap.add_argument("--model", default="model")
+ap.add_argument("--model", default="models/limite-1b-violetto")
 a = ap.parse_args()
 
 model, tokenizer = load(a.model)

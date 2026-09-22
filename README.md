@@ -15,7 +15,7 @@ transformers, llama.cpp, Ollama and stock mlx-lm.
 ## Use it with LM Studio
 
 ```bash
-git clone <this repo> && cd limite-mlx
+git clone https://github.com/christophe-rx/limite-mlx.git && cd limite-mlx
 ./install.sh                      # or: ./install.sh limite-1b-base
 ```
 
@@ -40,7 +40,7 @@ cp limite_mlx.py models/limite-1b-violetto/limite.py
 python -c "import json;p='models/limite-1b-violetto/config.json';c=json.load(open(p));c['model_file']='limite.py';json.dump(c,open(p,'w'),indent=2)"
 
 uv run python run.py "What is the remainder when 7^100 is divided by 13?"
-uv run python eval.py --model models/limite-1b-violetto
+uv run python eval.py
 ```
 
 `model_file` tells mlx-lm to load the architecture from the model folder.
@@ -49,6 +49,11 @@ other route — see [docs/LMSTUDIO.md](docs/LMSTUDIO.md).)
 
 Violetto reasons inside `<think>`…`</think>` before answering, so give it room
 — `--max-tokens 4096` is the default and hard problems want more.
+
+Its chat template supplies a fixed mathematical system prompt (*"…reason step
+by step, and put your final answer within \boxed{}"*) and **rejects custom
+system messages**, so there is no `--system` flag. Feeding it a different
+system prompt puts it off-distribution.
 
 ## Models
 
