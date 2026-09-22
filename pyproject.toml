@@ -1,0 +1,19 @@
+[project]
+name = "limite-mlx"
+version = "0.1.0"
+description = "Run Paradigma's Limite 1B models on Apple Silicon with MLX"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+dependencies = [
+    # 0.31 is the first release with the `model_file` hook used outside LM Studio
+    "mlx-lm>=0.31",
+]
+
+[project.optional-dependencies]
+# only needed to re-run the parity test against the PyTorch reference
+dev = ["torch>=2.4", "pytest", "numpy"]
+
+[project.urls]
+"Model weights" = "https://huggingface.co/paradigma-inc/limite-1b-violetto"
+"Reference implementation" = "https://github.com/paradigma-inc/limite-violetto"

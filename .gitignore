@@ -1,0 +1,13 @@
+# model weights - downloaded from Hugging Face, never committed
+models/
+model-*/
+*.safetensors
+*.safetensors.index.json
+
+# environments / caches
+.venv/
+.venv-mlx/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store

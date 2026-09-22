@@ -1,0 +1,19 @@
+limite-mlx
+Copyright 2026 the limite-mlx contributors
+
+This product includes software developed by Paradigma
+(https://paradigma.inc).
+
+`limite_mlx.py` is an MLX port of the `limite` architecture. It is derived from
+the reference implementation in the vLLM plugin published by Paradigma at
+https://github.com/paradigma-inc/limite-violetto, which is licensed under the
+Apache License, Version 2.0. `tests/reference_torch.py` is a PyTorch
+implementation of the same architecture, used to verify the port.
+
+The model weights (paradigma-inc/limite-1b-violetto, limite-1b-base,
+limite-1b-base-soup) are published separately by Paradigma under the Apache
+License, Version 2.0, and are not redistributed here.
+
+The architecture combines published research:
+  * Exclusive Self Attention (XSA), arXiv:2603.09078
+  * Multiway Dynamic Dense connections (MUDD), arXiv:2502.12170
